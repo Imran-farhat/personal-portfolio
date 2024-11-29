@@ -197,9 +197,9 @@
         }
 
         .img-box img {
-            border-radius: 50%;
-            width: 100%;
-            max-width: 500px;
+            border-radius: 35%;
+            width: 80%;
+            max-width: 300px;
         }
 
         /* About Section */
