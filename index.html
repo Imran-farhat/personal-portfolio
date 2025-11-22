@@ -77,7 +77,22 @@
                     <p class="eyebrow">Building intelligent, production-ready AI & ML systems</p>
                     <h1>Hi, I'm <span class="accent">Imran Farhat</span> — AI/ML Developer</h1>
                     <h2 class="sub">Aspiring AI/ML Developer | B.Tech (AI&DS)</h2>
-                    <p class="lead">I build and ship production-ready AI and ML systems — from data pipelines and feature engineering to deep learning, LLM pipelines (RAG) and computer vision deployments.</p>
+                    <p class="PS C:\personal-portfolio> npm start
+
+> personal-portfolio@1.0.0 start
+> node server.js
+
+Server listening on http://localhost:3000
+Error sending email Error: connect ECONNREFUSED 127.0.0.1:587
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+  errno: -4078,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 587,
+  command: 'CONN'
+}
+lead">I build and ship production-ready AI and ML systems — from data pipelines and feature engineering to deep learning, LLM pipelines (RAG) and computer vision deployments.</p>
 
                     <div class="cta">
                         <a class="btn primary" href="https://drive.google.com/file/d/1bO_MDsQtftTvXWFgC0_0OsFstmxoMfWK/view?usp=sharing" target="_blank" rel="noopener">View Resume</a>
@@ -264,7 +279,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.submit').innerText='Sent ✨'">
+                <form class="contact-form" id="contactForm" data-email-service="service_4c7k46q" data-email-template="template_zxemcwb">
                     <div class="form-row">
                         <input type="text" name="name" placeholder="Full name" required>
                         <input type="email" name="email" placeholder="Email" required>
@@ -275,6 +290,7 @@
                     </div>
                     <textarea name="message" rows="6" placeholder="Message"></textarea>
                     <button class="btn primary submit" type="submit">Send Message</button>
+                    <p class="form-status" aria-live="polite"></p>
                 </form>
             </div>
         </section>
@@ -292,6 +308,14 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function(){
+            if (window.emailjs) {
+                emailjs.init({ publicKey: "4Bm1OtLiow3YkMkkW" });
+            }
+        })();
+    </script>
     <script>
         // Safe mobile menu toggle (guard elements)
         try {

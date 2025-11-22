@@ -52,30 +52,77 @@
 			if(window.lottie){
 				const cont = document.getElementById('lottieHero');
 				if(cont){
-					// try local JSON first
 					(async function(){
-						const local = 'lottie/hero.json';
-						const fallback = 'https://assets1.lottiefiles.com/packages/lf20_tfb3estd.json'; // small public Lottie
-						async function tryLoad(url){
-							try{
-								const resp = await fetch(url);
-								if(!resp.ok) throw new Error('not ok');
-								const data = await resp.json();
-								lottie.loadAnimation({container:cont,renderer:'svg',loop:true,autoplay:true,animationData:data});
-								return true;
-							} catch(e){return false}
-						}
-						const okLocal = await tryLoad(local);
-						if(!okLocal){
-							const okFall = await tryLoad(fallback);
-							if(!okFall){
-								// remove container if cannot load
-								cont.remove();
-							}
+						const fallback = 'https://assets1.lottiefiles.com/packages/lf20_tfb3estd.json';
+						try{
+							const resp = await fetch(fallback);
+							if(!resp.ok) throw new Error('not ok');
+							const data = await resp.json();
+							lottie.loadAnimation({container:cont,renderer:'svg',loop:true,autoplay:true,animationData:data});
+						}catch(err){
+							console.warn('lottie load error', err);
+							cont.remove();
 						}
 					})();
 				}
 			}
 	}catch(e){console.warn('lottie load error',e)}
+
+	// Contact form submit handler -> EmailJS
+	const contactForm = document.getElementById('contactForm');
+	if (contactForm) {
+		const statusEl = contactForm.querySelector('.form-status');
+		const submitBtn = contactForm.querySelector('.submit');
+		const serviceId = contactForm.dataset.emailService;
+		const templateId = contactForm.dataset.emailTemplate;
+		const canUseEmailJs = typeof emailjs !== 'undefined';
+		contactForm.addEventListener('submit', async (event) => {
+			event.preventDefault();
+			if (!canUseEmailJs) {
+				statusEl && (statusEl.textContent = 'EmailJS failed to load. Please try again later.');
+				statusEl && statusEl.classList.add('error');
+				return;
+			}
+			if (!serviceId || !templateId) {
+				statusEl && (statusEl.textContent = 'Missing EmailJS configuration.');
+				statusEl && statusEl.classList.add('error');
+				return;
+			}
+			if (statusEl) {
+				statusEl.textContent = '';
+				statusEl.className = 'form-status';
+			}
+			if (submitBtn) {
+				submitBtn.disabled = true;
+				submitBtn.textContent = 'Sending…';
+			}
+			const formData = new FormData(contactForm);
+			const templateParams = {
+				from_name: formData.get('name'),
+				reply_to: formData.get('email'),
+				subject: formData.get('subject') || 'Portfolio Contact',
+				phone: formData.get('phone') || 'N/A',
+				message: formData.get('message') || ''
+			};
+			try {
+				await emailjs.send(serviceId, templateId, templateParams);
+				contactForm.reset();
+				if (statusEl) {
+					statusEl.textContent = 'Message sent successfully!';
+					statusEl.classList.add('success');
+				}
+			} catch (err) {
+				if (statusEl) {
+					statusEl.textContent = err?.text || err?.message || 'Failed to send message.';
+					statusEl.classList.add('error');
+				}
+			} finally {
+				if (submitBtn) {
+					submitBtn.disabled = false;
+					submitBtn.textContent = 'Send Message';
+				}
+			}
+		});
+	}
 })();
 

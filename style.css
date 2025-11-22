@@ -187,6 +187,9 @@ h1{font-size:2rem;margin:.2rem 0;color:#fff}
 .form-row input{flex:1;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
 textarea{width:100%;padding:.75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-top:.7rem}
 .btn.submit{width:100%;margin-top:.75rem}
+.form-status{margin-top:.5rem;font-size:.9rem;color:var(--muted);min-height:1.2em}
+.form-status.success{color:#2dd4bf}
+.form-status.error{color:#ff6b6b}
 
 /* Footer */
 .footer{padding:1.25rem 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:2rem}
