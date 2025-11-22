@@ -2,119 +2,365 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imran Farhat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Imran Farhat — AI/ML Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <meta name="description" content="Imran Farhat — Aspiring AI/ML Developer & Data Scientist | B.Tech (AI&DS)">
+    <style>html{scroll-behavior:smooth}</style>
 </head>
 
 <body>
-    <header class="header">
-        <a href="#" class="logo"><span>IMRAN</span>FARHAT</a>
+    <header class="header" id="header">
+        <a href="#" class="logo" aria-label="home"><span>IMRAN</span>FARHAT</a>
 
-        <nav class="navbar">
-            <a href="#" class="active">Portfolio</a>
-            <a href="#">Experience</a>
-            <a href="https://github.com/Imran-farhat/CYBER-SECURITY-THREAT-MANAGEMENT">Project</a>
-            <a href="#">Education</a>
+        <nav class="nav" id="nav">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
 
-        <div class="mobile-menu">
-            <div class="menu-icon" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav class="mobile-nav">
-                <a href="#" class="active">Portfolio</a>
-                <a href="#">Experience</a>
-                <a href="https://github.com/Imran-farhat/personal-portfolio">Project</a>
-                <a href="#">Education</a>
-            </nav>
+        <div class="header-actions">
+            <button class="tone-toggle" id="toneToggle" title="Toggle tone">Aggressive</button>
+            <button class="contact-btn" onclick="location.href='#contact'">Contact Me</button>
+            <button class="menu-toggle" id="menuToggle" aria-label="open menu">
+                <i class='bx bx-menu'></i>
+            </button>
         </div>
-
-        <a href="#contact" class="contact-btn">contact me</a>
     </header>
 
-    <section class="home">
-        <div class="home-content">
-            <h3>HI</h3>
-            <h1>I'M <span>IMRAN FARHAT</span></h1>
-            <h2>B.TECH(AI&DS)</h2>
-            <p>Data Engineering, Data Science, and Artificial Intelligence are hot topics in the current digital age.
-                These technologies have changed the way humans interpret a problem. These technologies work on data, but
-                utilize it for different outcomes.</p>
-            <div class="btn-box">
-                <a href="https://drive.google.com/file/d/1kJt6f5h2tgHPHaw9cUkolzI3q8JfmdRr/view?usp=drive_link"><button class="btn-1">Resume</button></a>
-                <button class="btn-2">Experience</button>
-            </div>
-        </div>
-        <div class="img-box">
-            <img src="Simple_Portfolio_files/img.jpeg" alt="">
-        </div>
-    </section>
+    <main>
+        <section class="hero" id="home">
+                        <!-- AI-themed animated background layers -->
+                        <div class="hero-bg">
+                                <svg class="ai-wave" viewBox="0 0 800 400" preserveAspectRatio="none" aria-hidden="true">
+                                        <defs>
+                                            <linearGradient id="g1" x1="0" x2="1">
+                                                <stop offset="0%" stop-color="#071018" />
+                                                <stop offset="100%" stop-color="#0b1a22" />
+                                            </linearGradient>
+                                        </defs>
+                                        <path fill="url(#g1)" d="M0 200 C150 100 350 300 800 200 L800 400 L0 400 Z"></path>
+                                </svg>
+                                <div class="ai-particles" aria-hidden="true"></div>
+                                <!-- Neural network SVG (nodes + connections) -->
+                                <svg class="ai-network" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                                    <g class="connections" stroke="rgba(255,69,0,0.12)" stroke-width="1.2" fill="none">
+                                        <path class="line" d="M120 120 L320 80 L520 140 L720 100 L920 140" />
+                                        <path class="line" d="M120 220 L320 180 L520 240 L720 200 L920 240" />
+                                        <path class="line" d="M160 60 L360 140 L560 80 L760 160 L960 100" />
+                                    </g>
+                                    <g class="nodes">
+                                        <circle class="node" cx="120" cy="120" r="6" />
+                                        <circle class="node" cx="320" cy="80" r="6" />
+                                        <circle class="node" cx="520" cy="140" r="6" />
+                                        <circle class="node" cx="720" cy="100" r="6" />
+                                        <circle class="node" cx="920" cy="140" r="6" />
 
-    <section class="about">
-        <div class="about-img">
-            <img src="Simple_Portfolio_files/img.jpeg" alt="" class="about-img">
-        </div>
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Aspiring <span>AI&DS</span></h3>
-            <p>Artificial intelligence (AI), the ability of a digital computer or computer-controlled robot to perform
-                tasks commonly associated with intelligent beings.</p>
-            <a href="#" class="btn-2">Experience</a>
-        </div>
-    </section>
+                                        <circle class="node" cx="120" cy="220" r="6" />
+                                        <circle class="node" cx="320" cy="180" r="6" />
+                                        <circle class="node" cx="520" cy="240" r="6" />
+                                        <circle class="node" cx="720" cy="200" r="6" />
+                                        <circle class="node" cx="920" cy="240" r="6" />
+                                    </g>
+                                </svg>
+                        </div>
 
-    <section class="contact-form" id="contact">
-        <h2 class="contact-me">contact <span>me</span></h2>
-        <form action="https://api.web3forms.com/submit" method="POST">
-            <div class="input-box">
-                 <input type="text" name="full_name" placeholder="Full name">
-                 <input type="email" name="email" placeholder="Email">
+                        <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="eyebrow">Building intelligent, production-ready AI & ML systems</p>
+                    <h1>Hi, I'm <span class="accent">Imran Farhat</span> — AI/ML Developer</h1>
+                    <h2 class="sub">Aspiring AI/ML Developer | B.Tech (AI&DS)</h2>
+                    <p class="lead">I build and ship production-ready AI and ML systems — from data pipelines and feature engineering to deep learning, LLM pipelines (RAG) and computer vision deployments.</p>
+
+                    <div class="cta">
+                        <a class="btn primary" href="https://drive.google.com/file/d/1bO_MDsQtftTvXWFgC0_0OsFstmxoMfWK/view?usp=sharing" target="_blank" rel="noopener">View Resume</a>
+                        <a class="btn outline" href="#projects">Explore Projects</a>
+                        <span class="badge">AI & ML • LLMs • Diffusion</span>
+                    </div>
+                </div>
+
+                <div class="hero-media">
+                    <div class="profile-card">
+                        <div id="lottieHero" class="lottie-hero" aria-hidden="true"></div>
+                        <!-- AI-generated background masked into avatar (SVG clipPath) -->
+                        <svg class="avatar-mask" viewBox="0 0 200 200" aria-hidden="true" width="220" height="220">
+                            <defs>
+                                <clipPath id="avatarClip">
+                                    <path d="M100,18 C132,18 160,34 176,60 C190,84 190,120 176,144 C160,170 132,186 100,186 C68,186 40,170 24,144 C10,120 10,84 24,60 C40,34 68,18 100,18 Z"/>
+                                </clipPath>
+                            </defs>
+                            <image clip-path="url(#avatarClip)" href="Simple_Portfolio_files/img.jpeg" x="0" y="0" width="220" height="220" preserveAspectRatio="xMidYMid slice"/>
+                        </svg>
+                        <div class="profile-meta">
+                            <p>Student • AI & Data Science</p>
+                            <div class="tags">
+                                <span>Deep Learning</span>
+                                <span>NLP</span>
+                                <span>LLMs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-                <div class="input-box">
-                <input type="hidden" name="access_key" value="46654f48-76e1-4584-87a3-09305ae48b7d">   
-                <input type="number" name="phone_number" placeholder="Phone number">
-                <input type="text" name="subject" placeholder="Subject">
+        </section>
+
+        <!-- Project details modal -->
+        <div id="projectModal" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose">×</button>
+                <h3 id="modalTitle">Project</h3>
+                <div id="modalMedia" class="modal-media"></div>
+                <div class="modal-body">
+                    <p id="modalDesc"></p>
+                    <pre id="modalCode" class="code-block"><code>// code snippet placeholder</code></pre>
+                    <a id="modalGit" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+                </div>
             </div>
-            <textarea name="message" cols="30" rows="10" placeholder="Your message"></textarea>
-            <input type="submit" value="Send Message" class="btn-1">
-        </form>
-    </section>
+        </div>
+
+        <section class="about" id="about">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h2>About <span class="accent">Me</span></h2>
+                    <p>I’m a B.Tech (AI & DS) student passionate about building practical AI systems. I focus on model development (PyTorch, TensorFlow), scalable data engineering, and applying LLMs and RAG to real-world problems.</p>
+                    <ul class="about-list">
+                        <li>Academic background: B.Tech (AI & DS)</li>
+                        <li>Domains: Deep Learning, NLP, Computer Vision, Data Engineering</li>
+                        <li>Interests: LLMs, RAG, Generative Models, Model Deployment</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>3+</h3>
+                        <p>Major Projects</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1000+</h3>
+                        <p>Lines of ML code</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Active</h3>
+                        <p>Learning & Building</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card skill-python">
+                        <div class="skill-icon-card"><i class='bx bxl-python'></i></div>
+                        <div>
+                            <h4>Programming</h4>
+                            <p>Python • Java</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card skill-frameworks">
+                        <div class="skill-icon-card"><i class='bx bxl-tensorflow'></i></div>
+                        <div>
+                            <h4>AI/ML Frameworks</h4>
+                            <p>PyTorch • TensorFlow • Scikit-learn • Hugging Face</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card skill-data">
+                        <div class="skill-icon-card"><i class='bx bx-data'></i></div>
+                        <div>
+                            <h4>Data & Cloud</h4>
+                            <p>Pandas • NumPy • SQL • Docker • AWS</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card skill-git">
+                        <div class="skill-icon-card"><i class='bx bxl-git'></i></div>
+                        <div>
+                            <h4>Version Control</h4>
+                            <p>Git • GitHub</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2>Selected Projects</h2>
+                <p class="section-intro">Featured work that demonstrates model development, system design and deployment.</p>
+
+                <div class="projects-grid">
+                    <article class="project-card" data-project="TEXT-IMAGE-GENERATOR" data-github="https://github.com/Imran-farhat/TEXT-IMAGE-GENERATOR" data-desc="Diffusion-based generative model (Stable Diffusion) implemented in PyTorch for text-to-image synthesis.">
+                        <div class="thumb thumb-anim" role="img" aria-label="TEXT-IMAGE-GENERATOR preview">
+                            <img src="https://www.weetechsolution.com/wp-content/uploads/2023/01/imgpsh_fullsize_anim-4.jpg" alt="TEXT-IMAGE-GENERATOR preview">
+                        </div>
+                        <div class="project-head">
+                            <h3>TEXT-IMAGE-GENERATOR</h3>
+                            <p class="muted">Diffusion-based generative model (Stable Diffusion) implemented in PyTorch for text-to-image synthesis.</p>
+                        </div>
+                        <div class="project-cta">
+                            <a class="btn" href="https://github.com/Imran-farhat/TEXT-IMAGE-GENERATOR" target="_blank">View on GitHub</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project="Education-Chatbot" data-github="https://github.com/Imran-farhat/Education-Chatbot" data-desc="Conversational tutor using LLMs with a RAG pipeline to provide accurate, citeable responses from course material.">
+                        <div class="thumb thumb-code" role="img" aria-label="Education-Chatbot preview">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.AoHbYtSRLoNUA7pTnOn4YgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Education-Chatbot preview">
+                        </div>
+                        <div class="project-head">
+                            <h3>Education-Chatbot</h3>
+                            <p class="muted">Conversational tutor using LLMs with a RAG pipeline to provide accurate, citeable responses from course material.</p>
+                        </div>
+                        <div class="project-cta">
+                            <a class="btn" href="https://github.com/Imran-farhat/Education-Chatbot" target="_blank">View on GitHub</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project="job recommender" data-github="https://github.com/Imran-farhat/job-recommender" data-desc="Job recommendation system using collaborative/content-based filtering with careful feature engineering for matching candidates to roles.">
+                        <div class="thumb thumb-grid" role="img" aria-label="job recommender preview">
+                            <img src="https://images.prismic.io/intuzwebsite/d9daef05-a416-4e84-b0f8-2d5e2e3b58d8_A+Comprehensive+Guide+to+Building+an+AI+Chatbot%402x.png?w=2400&q=80&auto=format,compress&fm=png8" alt="job recommender preview">
+                        </div>
+                        <div class="project-head">
+                            <h3>job recommender</h3>
+                            <p class="muted">Job recommendation system using collaborative/content-based filtering with careful feature engineering for matching candidates to roles.</p>
+                        </div>
+                        <div class="project-cta">
+                            <a class="btn" href="https://github.com/Imran-farhat/job-recommender" target="_blank">View on GitHub</a>
+                        </div>
+                    </article>
+
+                    <!-- placeholder for more projects -->
+                    <article class="project-card dim">
+                        <div class="project-head">
+                            <h3>More projects</h3>
+                            <p class="muted">Explore other repositories on my GitHub to see additional experiments and notebooks.</p>
+                        </div>
+                        <div class="project-cta">
+                            <a class="btn" href="https://github.com/Imran-farhat" target="_blank">View GitHub</a>
+                            <a class="btn outline" href="#">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <h2>Contact</h2>
+                    <p>Have a project or opportunity? I’d love to hear from you. Fill the form and I’ll get back shortly.</p>
+                    <div class="social-row">
+                        <a href="http://linkedin.com/in/m-i-imran-farhat-28a817256" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+                        <a href="https://github.com/Imran-farhat" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                        <a href="https://www.instagram.com/__imran_idhrees__?igsh=dnp4bXN6N2pvc2hw&utm_source=qr" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.submit').innerText='Sent ✨'">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Full name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="subject" placeholder="Subject">
+                        <input type="tel" name="phone" placeholder="Phone">
+                    </div>
+                    <textarea name="message" rows="6" placeholder="Message"></textarea>
+                    <button class="btn primary submit" type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
-        <div class="social">
-            <a href="https://www.instagram.com/__imran_idhrees__?igsh=dnp4bXN6N2pvc2hw&utm_source=qr"><i class='bx bxl-instagram'></i></a>
-            <a href="http://linkedin.com/in/m-i-imran-farhat-28a817256"><i class='bx bxl-linkedin-square'></i></a>
-            <a href="https://github.com/Imran-farhat"><i class='bx bxl-github' ></i></a>
+        <div class="container footer-grid">
+            <a href="#" class="logo small"><span>IMRAN</span>FARHAT</a>
+            <p class="copyright">© 2025 Imran Farhat • All rights reserved</p>
+            <div class="social-footer">
+                <a href="http://linkedin.com/in/m-i-imran-farhat-28a817256"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://github.com/Imran-farhat"><i class='bx bxl-github'></i></a>
+                <a href="https://www.instagram.com/__imran_idhrees__?igsh=dnp4bXN6N2pvc2hw&utm_source=qr"><i class='bx bxl-instagram'></i></a>
+            </div>
         </div>
-
-        <ul class="list">
-            <li><a href="#" class="active">About Me</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <p class="copyright">© 2024 Imran Farhat | All rights reserved</p>
     </footer>
 
     <script>
-        function toggleMobileMenu() {
-            var mobileNav = document.querySelector('.mobile-nav');
-            var menuIcon = document.querySelector('.menu-icon');
-            
-            if (mobileNav.style.display === 'block') {
-                mobileNav.style.display = 'none';
-                menuIcon.classList.remove('open');
-            } else {
-                mobileNav.style.display = 'block';
-                menuIcon.classList.add('open');
+        // Safe mobile menu toggle (guard elements)
+        try {
+            const menuToggle = document.getElementById('menuToggle');
+            const nav = document.getElementById('nav');
+            if (menuToggle && nav) {
+                menuToggle.addEventListener('click', () => {
+                    nav.classList.toggle('open');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) icon.classList.toggle('bx-x');
+                    if (icon) icon.classList.toggle('bx-menu');
+                });
+
+                // Close mobile nav on link click
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => nav.classList.remove('open'));
+                });
             }
+        } catch (e) {
+            // non-fatal
+            console.warn('menu script error', e);
         }
+
+        // Reveal-on-scroll with graceful fallback
+        (function(){
+            try {
+                const reveals = document.querySelectorAll('.container > *');
+                if ('IntersectionObserver' in window && reveals.length) {
+                    const obs = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) entry.target.classList.add('reveal');
+                        });
+                    }, {threshold: 0.12});
+                    reveals.forEach(r => obs.observe(r));
+                } else {
+                    // Fallback: immediately reveal content so page isn't blank
+                    reveals.forEach(r => r.classList.add('reveal'));
+                }
+            } catch (err) {
+                console.warn('reveal error', err);
+                document.querySelectorAll('.container > *').forEach(r => r.classList.add('reveal'));
+            }
+        })();
+
+        // gentle parallax for ai-network
+        (function(){
+            try{
+                const net = document.querySelector('.ai-network');
+                if(!net) return;
+                let lastY = 0;
+                function onScroll(){
+                    const y = window.scrollY || window.pageYOffset;
+                    const t = Math.min(60, y/6);
+                    net.style.transform = `translateX(-45%) translateY(${ -5 + t * 0.05 }%)`;
+                }
+                window.addEventListener('scroll', () => { requestAnimationFrame(onScroll) }, {passive:true});
+
+                // pointer parallax (subtle)
+                window.addEventListener('mousemove', (e) => {
+                    const w = window.innerWidth; const h = window.innerHeight;
+                    const nx = (e.clientX - w/2) / (w/2) * 6; // px
+                    const ny = (e.clientY - h/2) / (h/2) * 3; // px
+                    net.style.transform = `translateX(calc(-45% + ${nx}px)) translateY(calc(-5% + ${ny}px))`;
+                });
+            } catch(e){console.warn('parallax error', e)}
+        })();
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.1/lottie.min.js" integrity="" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
