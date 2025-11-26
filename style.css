@@ -37,6 +37,7 @@ body{
 /* Hero */
 .hero{padding:8rem 0 4rem}
 .hero-grid{display:grid;grid-template-columns:1fr 480px;gap:2rem;align-items:center}
+.hero-content{display:flex;flex-direction:column;gap:.75rem}
 
 .hero-media{display:flex;align-items:center;justify-content:center}
 .eyebrow{color:var(--accent);font-weight:600;margin:0 0 .5rem}
@@ -44,7 +45,7 @@ h1{font-size:2rem;margin:.2rem 0;color:#fff}
 
 .sub{color:var(--muted);margin:.4rem 0 1rem;font-weight:500}
 .lead{color:#cfe6ff;opacity:.9}
-.cta{margin-top:1rem;display:flex;gap:.75rem}
+.cta{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}
 .btn{display:inline-block;text-decoration:none;padding:.6rem 1rem;border-radius:10px;font-weight:600;border:2px solid transparent}
 .btn.primary{background:var(--accent);color:#071018}
 .btn.outline{background:transparent;border-color:var(--accent);color:var(--accent)}
@@ -92,6 +93,19 @@ h1{font-size:2rem;margin:.2rem 0;color:#fff}
   .hero{padding:5rem 0 2rem}
   .hero-grid{grid-template-columns:1fr}
   .lottie-hero{width:96px;height:96px}
+}
+
+@media (max-width:640px){
+  .container{padding:1.5rem 1.25rem}
+  .hero-content{text-align:center;align-items:center}
+  .hero-content .cta{flex-direction:column;width:100%;align-items:stretch}
+  .hero-content .btn{width:100%}
+  .profile-card{margin-top:1.5rem;justify-content:center;flex-wrap:wrap}
+  .profile-card .avatar-mask{margin:0 auto}
+  .about, .skills, .projects, .contact{padding:2rem 0}
+  .form-row{flex-direction:column}
+  .contact-form{padding:1.25rem}
+  .contact-grid{gap:1.5rem}
 }
 
 /* Header actions */
@@ -149,19 +163,19 @@ h1{font-size:2rem;margin:.2rem 0;color:#fff}
 
 /* About */
 .about{padding:3.5rem 0}
-.about-grid{display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:start}
+.about-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,0.8fr);gap:2.5rem;align-items:start}
 .about-text h2{margin:0 0 .5rem}
 .about-text p{color:var(--muted)}
 .about-list{margin-top:1rem;color:var(--muted);list-style:none;padding:0}
 .about-list li{margin:.4rem 0}
-.about-stats{display:flex;flex-direction:column;gap:1rem}
+.about-stats{display:grid;grid-template-columns:1fr;gap:1.25rem}
 .stat{background:var(--card);padding:1rem;border-radius:12px;text-align:center}
 .stat h3{margin:0;color:var(--accent)}
 .stat p{margin:.25rem 0 0;color:var(--muted)}
 
 /* Skills */
 .skills{padding:2rem 0}
-.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
 .skill-card{background:var(--card);padding:1rem;border-radius:12px;display:flex;align-items:center;gap:1rem}
 .skill-icon{font-size:2rem;color:var(--accent)}
 .skill-card h4{margin:0}
