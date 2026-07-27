@@ -19,6 +19,12 @@
 </head>
 
 <body>
+    <!-- Ambient Glow Effects -->
+    <div class="glow-blob" style="top: 10%; left: 5%;"></div>
+    <div class="glow-blob purple" style="top: 35%; right: 5%;"></div>
+    <div class="glow-blob" style="top: 65%; left: 10%;"></div>
+    <div class="glow-blob purple" style="top: 85%; right: 10%;"></div>
+
     <header class="header" id="header">
         <a href="#" class="logo" aria-label="home"><span>IMRAN</span>FARHAT</a>
 
@@ -46,15 +52,15 @@
                 <svg class="ai-wave" viewBox="0 0 800 400" preserveAspectRatio="none" aria-hidden="true">
                     <defs>
                         <linearGradient id="g1" x1="0" x2="1">
-                            <stop offset="0%" stop-color="#060813" />
-                            <stop offset="100%" stop-color="#0b0e1b" />
+                            <stop offset="0%" stop-color="#030611" />
+                            <stop offset="100%" stop-color="#080b1b" />
                         </linearGradient>
                     </defs>
                     <path fill="url(#g1)" d="M0 200 C150 100 350 300 800 200 L800 400 L0 400 Z"></path>
                 </svg>
                 <div class="ai-particles" aria-hidden="true"></div>
                 <svg class="ai-network" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                    <g class="connections" stroke="rgba(0, 242, 254, 0.08)" stroke-width="1.2" fill="none">
+                    <g class="connections" stroke="rgba(0, 242, 254, 0.06)" stroke-width="1.2" fill="none">
                         <path class="line" d="M120 120 L320 80 L520 140 L720 100 L920 140" />
                         <path class="line" d="M120 220 L320 180 L520 240 L720 200 L920 240" />
                         <path class="line" d="M160 60 L360 140 L560 80 L760 160 L960 100" />
@@ -89,6 +95,12 @@
 
                 <div class="hero-media reveal-element">
                     <div class="profile-card">
+                        <!-- Cyber Decorative Corners -->
+                        <div class="cyber-corner top-left"></div>
+                        <div class="cyber-corner top-right"></div>
+                        <div class="cyber-corner bottom-left"></div>
+                        <div class="cyber-corner bottom-right"></div>
+
                         <div class="avatar-container">
                             <div class="avatar-inner">
                                 <img src="meee.jpeg" alt="Imran Farhat">
@@ -175,57 +187,86 @@
             <div class="container reveal-element">
                 <h2 class="section-title">Technical Expertise</h2>
                 <div class="skills-grid">
-                    <div class="skill-card skill-python">
+                    <!-- Languages -->
+                    <div class="skill-card skill-languages">
                         <div class="skill-header">
-                            <div class="skill-icon-card"><i class='bx bxl-python'></i></div>
-                            <h4>Programming</h4>
+                            <div class="skill-icon-card"><i class='bx bx-code-block'></i></div>
+                            <h4>Languages</h4>
                         </div>
                         <div class="skill-pills">
                             <span class="skill-pill">Python</span>
-                            <span class="skill-pill">Java</span>
-                            <span class="skill-pill">HTML5 & CSS3</span>
-                            <span class="skill-pill">JavaScript (ES6+)</span>
+                            <span class="skill-pill">SQL</span>
                         </div>
                     </div>
 
+                    <!-- AI/ML -->
+                    <div class="skill-card skill-aiml">
+                        <div class="skill-header">
+                            <div class="skill-icon-card"><i class='bx bx-brain'></i></div>
+                            <h4>AI/ML</h4>
+                        </div>
+                        <div class="skill-pills">
+                            <span class="skill-pill">TensorFlow</span>
+                            <span class="skill-pill">PyTorch</span>
+                            <span class="skill-pill">HuggingFace</span>
+                            <span class="skill-pill">Transformers</span>
+                            <span class="skill-pill">LLM</span>
+                            <span class="skill-pill">RAG</span>
+                            <span class="skill-pill">NLP</span>
+                            <span class="skill-pill">Computer Vision</span>
+                        </div>
+                    </div>
+
+                    <!-- Generative AI -->
+                    <div class="skill-card skill-genai">
+                        <div class="skill-header">
+                            <div class="skill-icon-card"><i class='bx bx-network-chart'></i></div>
+                            <h4>Generative AI</h4>
+                        </div>
+                        <div class="skill-pills">
+                            <span class="skill-pill">Groq API</span>
+                            <span class="skill-pill">OpenAI API</span>
+                            <span class="skill-pill">Agentic Workflows</span>
+                            <span class="skill-pill">Vector DB (Pinecone, Supabase)</span>
+                        </div>
+                    </div>
+
+                    <!-- Techniques -->
+                    <div class="skill-card skill-techniques">
+                        <div class="skill-header">
+                            <div class="skill-icon-card"><i class='bx bx-shield-quarter'></i></div>
+                            <h4>Techniques</h4>
+                        </div>
+                        <div class="skill-pills">
+                            <span class="skill-pill">Model Fine-tuning</span>
+                            <span class="skill-pill">Training</span>
+                            <span class="skill-pill">Prompt Engineering</span>
+                            <span class="skill-pill">MLOps</span>
+                            <span class="skill-pill">CI/CD</span>
+                        </div>
+                    </div>
+
+                    <!-- Frameworks & Tools -->
                     <div class="skill-card skill-frameworks">
                         <div class="skill-header">
-                            <div class="skill-icon-card"><i class='bx bxl-tensorflow'></i></div>
-                            <h4>AI/ML Frameworks</h4>
+                            <div class="skill-icon-card"><i class='bx bx-cog'></i></div>
+                            <h4>Frameworks & Tools</h4>
                         </div>
                         <div class="skill-pills">
-                            <span class="skill-pill">PyTorch</span>
-                            <span class="skill-pill">TensorFlow</span>
-                            <span class="skill-pill">Scikit-learn</span>
-                            <span class="skill-pill">Hugging Face</span>
-                            <span class="skill-pill">LLM RAG</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-card skill-data">
-                        <div class="skill-header">
-                            <div class="skill-icon-card"><i class='bx bx-data'></i></div>
-                            <h4>Data & Cloud</h4>
-                        </div>
-                        <div class="skill-pills">
-                            <span class="skill-pill">Pandas & NumPy</span>
-                            <span class="skill-pill">SQL & Supabase</span>
-                            <span class="skill-pill">Docker</span>
-                            <span class="skill-pill">AWS Cloud</span>
-                            <span class="skill-pill">React & Vite</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-card skill-git">
-                        <div class="skill-header">
-                            <div class="skill-icon-card"><i class='bx bxl-git'></i></div>
-                            <h4>DevOps & Tools</h4>
-                        </div>
-                        <div class="skill-pills">
-                            <span class="skill-pill">Git & GitHub</span>
-                            <span class="skill-pill">GitHub Actions</span>
-                            <span class="skill-pill">CI/CD</span>
-                            <span class="skill-pill">EmailJS</span>
+                            <span class="skill-pill">Flask</span>
+                            <span class="skill-pill">FastAPI</span>
+                            <span class="skill-pill">OpenCV</span>
+                            <span class="skill-pill">MediaPipe</span>
+                            <span class="skill-pill">PaddleOCR</span>
+                            <span class="skill-pill">Pandas</span>
+                            <span class="skill-pill">NumPy</span>
+                            <span class="skill-pill">NLTK</span>
+                            <span class="skill-pill">n8n</span>
+                            <span class="skill-pill">Git</span>
+                            <span class="skill-pill">GitHub</span>
+                            <span class="skill-pill">Docker (Basic)</span>
+                            <span class="skill-pill">Vercel</span>
+                            <span class="skill-pill">HuggingFace Spaces</span>
                         </div>
                     </div>
                 </div>
