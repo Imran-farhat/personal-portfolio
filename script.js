@@ -1,74 +1,98 @@
-(function(){
-	// Modal logic for projects
-	const modal = document.getElementById('projectModal');
-	const modalTitle = document.getElementById('modalTitle');
-	const modalDesc = document.getElementById('modalDesc');
-	const modalCode = document.getElementById('modalCode');
-	const modalGit = document.getElementById('modalGit');
-	const modalMedia = document.getElementById('modalMedia');
-	const modalClose = document.getElementById('modalClose');
+(function () {
+	// Mobile menu toggle
+	const menuToggle = document.getElementById('menuToggle');
+	const nav = document.getElementById('nav');
+	if (menuToggle && nav) {
+		menuToggle.addEventListener('click', () => {
+			nav.classList.toggle('open');
+			const icon = menuToggle.querySelector('i');
+			if (icon) {
+				icon.classList.toggle('bx-x');
+				icon.classList.toggle('bx-menu');
+			}
+		});
 
-	function openProject(el){
-		const title = el.dataset.project || 'Project';
-		const desc = el.dataset.desc || '';
-		const git = el.dataset.github || '#';
-		modalTitle.textContent = title;
-		modalDesc.textContent = desc;
-		modalGit.href = git;
-		modalCode.querySelector('code').textContent = `// Example snippet for ${title}\nprint('Hello from ${title}')`;
-		// placeholder media
-		modalMedia.innerHTML = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--muted)">Preview</div>`;
-		modal.setAttribute('aria-hidden','false');
+		// Close mobile nav on link click
+		document.querySelectorAll('.nav-link').forEach(link => {
+			link.addEventListener('click', () => {
+				nav.classList.remove('open');
+				const icon = menuToggle.querySelector('i');
+				if (icon) {
+					icon.classList.remove('bx-x');
+					icon.classList.add('bx-menu');
+				}
+			});
+		});
 	}
 
-	document.querySelectorAll('.project-card .open-modal').forEach(btn => {
-		btn.addEventListener('click', (ev)=>{
-			const card = ev.target.closest('.project-card');
-			if(card) openProject(card);
+	// Active link on scroll
+	const sections = document.querySelectorAll('section[id]');
+	const navLinks = document.querySelectorAll('.nav-link');
+
+	function activeLinkOnScroll() {
+		const scrollY = window.scrollY || window.pageYOffset;
+		sections.forEach(current => {
+			const sectionHeight = current.offsetHeight;
+			const sectionTop = current.offsetTop - 120;
+			const sectionId = current.getAttribute('id');
+
+			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+				navLinks.forEach(link => {
+					link.classList.remove('active');
+					if (link.getAttribute('href') === `#${sectionId}`) {
+						link.classList.add('active');
+					}
+				});
+			}
 		});
-	});
+	}
+	window.addEventListener('scroll', activeLinkOnScroll);
 
-	modalClose.addEventListener('click', ()=> modal.setAttribute('aria-hidden','true'));
-	modal.addEventListener('click', (e)=>{ if(e.target===modal) modal.setAttribute('aria-hidden','true') });
+	// Reveal-on-scroll IntersectionObserver
+	try {
+		const reveals = document.querySelectorAll('.reveal-element');
+		if ('IntersectionObserver' in window && reveals.length) {
+			const obs = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('reveal-active');
+					}
+				});
+			}, { threshold: 0.1 });
+			reveals.forEach(r => obs.observe(r));
+		} else {
+			reveals.forEach(r => r.classList.add('reveal-active'));
+		}
+	} catch (err) {
+		console.warn('reveal observer error', err);
+		document.querySelectorAll('.reveal-element').forEach(r => r.classList.add('reveal-active'));
+	}
 
-	// Tone toggle (Aggressive / Soft)
+	// Tone toggle logic (Aggressive vs Soft Theme Accents)
 	const toneToggle = document.getElementById('toneToggle');
 	let aggressive = true;
-	toneToggle && toneToggle.addEventListener('click', ()=>{
-		aggressive = !aggressive;
-		if(aggressive){
-			document.documentElement.style.setProperty('--accent','#FF4500');
-			document.documentElement.style.setProperty('--muted','#98a1ad');
-			toneToggle.textContent = 'Aggressive';
-		} else {
-			document.documentElement.style.setProperty('--accent','#ff8a65');
-			document.documentElement.style.setProperty('--muted','#9fb6c9');
-			toneToggle.textContent = 'Soft';
-		}
-	});
-
-	// Lottie in hero (optional) - looks for .lottie-hero element
-	try{
-			if(window.lottie){
-				const cont = document.getElementById('lottieHero');
-				if(cont){
-					(async function(){
-						const fallback = 'https://assets1.lottiefiles.com/packages/lf20_tfb3estd.json';
-						try{
-							const resp = await fetch(fallback);
-							if(!resp.ok) throw new Error('not ok');
-							const data = await resp.json();
-							lottie.loadAnimation({container:cont,renderer:'svg',loop:true,autoplay:true,animationData:data});
-						}catch(err){
-							console.warn('lottie load error', err);
-							cont.remove();
-						}
-					})();
-				}
+	if (toneToggle) {
+		toneToggle.addEventListener('click', () => {
+			aggressive = !aggressive;
+			const root = document.documentElement;
+			if (aggressive) {
+				root.style.setProperty('--accent', '#00f2fe');
+				root.style.setProperty('--accent-secondary', '#9d4edd');
+				root.style.setProperty('--accent-gradient', 'linear-gradient(135deg, #00f2fe 0%, #9d4edd 100%)');
+				root.style.setProperty('--accent-glow', 'rgba(0, 242, 254, 0.15)');
+				toneToggle.textContent = 'Aggressive';
+			} else {
+				// Soft theme: Neon emerald and sky blue
+				root.style.setProperty('--accent', '#00ffd0');
+				root.style.setProperty('--accent-secondary', '#4facfe');
+				root.style.setProperty('--accent-gradient', 'linear-gradient(135deg, #00ffd0 0%, #4facfe 100%)');
+				root.style.setProperty('--accent-glow', 'rgba(0, 255, 208, 0.15)');
+				toneToggle.textContent = 'Soft';
 			}
-	}catch(e){console.warn('lottie load error',e)}
+		});
+	}
 
-	// Contact form submit handler -> EmailJS
+	// Contact form submission to EmailJS
 	const contactForm = document.getElementById('contactForm');
 	if (contactForm) {
 		const statusEl = contactForm.querySelector('.form-status');
@@ -76,18 +100,25 @@
 		const serviceId = contactForm.dataset.emailService;
 		const templateId = contactForm.dataset.emailTemplate;
 		const canUseEmailJs = typeof emailjs !== 'undefined';
+
 		contactForm.addEventListener('submit', async (event) => {
 			event.preventDefault();
+
 			if (!canUseEmailJs) {
-				statusEl && (statusEl.textContent = 'EmailJS failed to load. Please try again later.');
-				statusEl && statusEl.classList.add('error');
+				if (statusEl) {
+					statusEl.textContent = 'Service is temporarily unavailable. Please try again later.';
+					statusEl.className = 'form-status error';
+				}
 				return;
 			}
 			if (!serviceId || !templateId) {
-				statusEl && (statusEl.textContent = 'Missing EmailJS configuration.');
-				statusEl && statusEl.classList.add('error');
+				if (statusEl) {
+					statusEl.textContent = 'Missing email configuration details.';
+					statusEl.className = 'form-status error';
+				}
 				return;
 			}
+
 			if (statusEl) {
 				statusEl.textContent = '';
 				statusEl.className = 'form-status';
@@ -96,6 +127,7 @@
 				submitBtn.disabled = true;
 				submitBtn.textContent = 'Sending…';
 			}
+
 			const formData = new FormData(contactForm);
 			const templateParams = {
 				from_name: formData.get('name'),
@@ -104,17 +136,18 @@
 				phone: formData.get('phone') || 'N/A',
 				message: formData.get('message') || ''
 			};
+
 			try {
 				await emailjs.send(serviceId, templateId, templateParams);
 				contactForm.reset();
 				if (statusEl) {
 					statusEl.textContent = 'Message sent successfully!';
-					statusEl.classList.add('success');
+					statusEl.className = 'form-status success';
 				}
 			} catch (err) {
 				if (statusEl) {
-					statusEl.textContent = err?.text || err?.message || 'Failed to send message.';
-					statusEl.classList.add('error');
+					statusEl.textContent = err?.text || err?.message || 'Failed to send message. Please check connection.';
+					statusEl.className = 'form-status error';
 				}
 			} finally {
 				if (submitBtn) {
@@ -125,4 +158,3 @@
 		});
 	}
 })();
-
