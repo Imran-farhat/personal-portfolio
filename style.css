@@ -1,26 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
+  /* Default variables (Theme Aggressive - Hot Crimson Cyberpunk) */
+  --bg-main: #050508;
+  --bg-gradient: linear-gradient(180deg, #050508 0%, #150909 100%);
+  --card-bg: rgba(22, 12, 12, 0.5);
+  --card-hover-bg: rgba(35, 15, 15, 0.7);
+  --glass-border: rgba(255, 69, 0, 0.12);
+  --glass-border-hover: rgba(255, 69, 0, 0.4);
+  
+  /* Cyber accents */
+  --accent: #ff3f34; /* Intense neon red */
+  --accent-secondary: #ff8200; /* Intense neon orange */
+  --accent-gradient: linear-gradient(135deg, #ff3f34 0%, #ff8200 100%);
+  --accent-glow: rgba(255, 63, 52, 0.25);
+  --accent-secondary-glow: rgba(255, 130, 0, 0.15);
+  --muted: #a69393;
+  --text-main: #fff0f0;
+  --radius-lg: 8px; /* sharp industrial corners */
+  --radius-md: 6px;
+  --max-width: 1200px;
+  --ff-sans: 'Outfit', sans-serif;
+  --ff-display: 'Space Grotesk', sans-serif;
+}
+
+body.theme-soft {
+  /* Soft Theme - Cold Emerald & Sky Blue Frosted */
   --bg-main: #030611;
   --bg-gradient: linear-gradient(180deg, #030611 0%, #080b1b 100%);
   --card-bg: rgba(10, 16, 32, 0.45);
   --card-hover-bg: rgba(14, 23, 47, 0.65);
   --glass-border: rgba(0, 242, 254, 0.08);
   --glass-border-hover: rgba(0, 242, 254, 0.3);
-  
-  /* Cyber accents - Default Aggressive */
-  --accent: #00f2fe;
-  --accent-secondary: #9d4edd;
-  --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #9d4edd 100%);
-  --accent-glow: rgba(0, 242, 254, 0.2);
-  --accent-secondary-glow: rgba(157, 78, 221, 0.15);
+  --accent: #00ffd0; /* Emerald/Mint */
+  --accent-secondary: #00b4d8; /* Sky Blue */
+  --accent-gradient: linear-gradient(135deg, #00ffd0 0%, #00b4d8 100%);
+  --accent-glow: rgba(0, 255, 208, 0.2);
+  --accent-secondary-glow: rgba(0, 180, 216, 0.15);
   --muted: #8393a7;
   --text-main: #f0f5fc;
-  --radius-lg: 16px;
-  --radius-md: 10px;
-  --max-width: 1200px;
-  --ff-sans: 'Outfit', sans-serif;
-  --ff-display: 'Space Grotesk', sans-serif;
+  --radius-lg: 22px; /* soft rounded corners */
+  --radius-md: 14px;
 }
 
 * {
@@ -52,14 +72,21 @@ body::before {
   position: fixed;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(0, 242, 254, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 242, 254, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255, 63, 52, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 63, 52, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   background-position: center;
   mask-image: radial-gradient(circle at 50% 50%, black, transparent 85%);
   -webkit-mask-image: radial-gradient(circle at 50% 50%, black, transparent 85%);
   pointer-events: none;
   z-index: 0;
+  transition: background-image 0.5s ease;
+}
+
+body.theme-soft::before {
+  background-image: 
+    linear-gradient(rgba(0, 242, 254, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 254, 0.02) 1px, transparent 1px);
 }
 
 .container {
@@ -251,6 +278,19 @@ body::before {
   pointer-events: none;
 }
 
+.node {
+  fill: var(--accent);
+  transition: fill 0.5s ease;
+}
+.nodes circle:nth-child(n+6) {
+  fill: var(--accent-secondary);
+}
+.connections {
+  stroke: var(--accent);
+  opacity: 0.1;
+  transition: stroke 0.5s ease;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
@@ -405,11 +445,30 @@ h1 .accent {
   height: 14px;
   border: 2px solid var(--accent);
   pointer-events: none;
+  transition: border-color 0.5s ease;
 }
 .cyber-corner.top-left { top: 10px; left: 10px; border-right: none; border-bottom: none; }
 .cyber-corner.top-right { top: 10px; right: 10px; border-left: none; border-bottom: none; border-color: var(--accent-secondary); }
 .cyber-corner.bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
 .cyber-corner.bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; border-color: var(--accent-secondary); }
+
+body.theme-soft .cyber-corner {
+  display: none !important;
+}
+
+body {
+  transition: background-color 0.5s ease, background-image 0.5s ease, color 0.5s ease;
+}
+
+.profile-card,
+.skill-card,
+.project-card,
+.contact-form,
+.btn,
+.header,
+.footer {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
 .profile-card::before {
   content: '';

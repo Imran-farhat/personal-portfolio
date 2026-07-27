@@ -68,26 +68,18 @@
 		document.querySelectorAll('.reveal-element').forEach(r => r.classList.add('reveal-active'));
 	}
 
-	// Tone toggle logic (Aggressive vs Soft Theme Accents)
+	// Tone toggle logic (Aggressive vs Soft Theme Class Toggle)
 	const toneToggle = document.getElementById('toneToggle');
-	let aggressive = true;
 	if (toneToggle) {
 		toneToggle.addEventListener('click', () => {
-			aggressive = !aggressive;
-			const root = document.documentElement;
-			if (aggressive) {
-				root.style.setProperty('--accent', '#00f2fe');
-				root.style.setProperty('--accent-secondary', '#9d4edd');
-				root.style.setProperty('--accent-gradient', 'linear-gradient(135deg, #00f2fe 0%, #9d4edd 100%)');
-				root.style.setProperty('--accent-glow', 'rgba(0, 242, 254, 0.15)');
-				toneToggle.textContent = 'Aggressive';
-			} else {
-				// Soft theme: Neon emerald and sky blue
-				root.style.setProperty('--accent', '#00ffd0');
-				root.style.setProperty('--accent-secondary', '#4facfe');
-				root.style.setProperty('--accent-gradient', 'linear-gradient(135deg, #00ffd0 0%, #4facfe 100%)');
-				root.style.setProperty('--accent-glow', 'rgba(0, 255, 208, 0.15)');
+			if (document.body.classList.contains('theme-aggressive')) {
+				document.body.classList.remove('theme-aggressive');
+				document.body.classList.add('theme-soft');
 				toneToggle.textContent = 'Soft';
+			} else {
+				document.body.classList.remove('theme-soft');
+				document.body.classList.add('theme-aggressive');
+				toneToggle.textContent = 'Aggressive';
 			}
 		});
 	}
