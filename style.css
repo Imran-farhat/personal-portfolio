@@ -1120,6 +1120,13 @@ body {
 
 /* Mobile Media Queries */
 @media (max-width: 992px) {
+  .hero {
+    padding: 5.5rem 0 2rem;
+  }
+  .hero .container {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
   h1 { font-size: 2.8rem; }
   .hero-grid { grid-template-columns: 1fr; gap: 3.5rem; text-align: center; }
   .hero-content { align-items: center; }
