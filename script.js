@@ -149,4 +149,51 @@
 			}
 		});
 	}
+
+	// Case Study Modal Logic
+	const caseStudyModal = document.getElementById('caseStudyModal');
+	const closeCaseStudyBtn = document.getElementById('closeCaseStudy');
+	const caseStudyTriggers = document.querySelectorAll('.case-study-btn');
+
+	function openCaseStudy() {
+		if (caseStudyModal) {
+			caseStudyModal.classList.add('active');
+			caseStudyModal.setAttribute('aria-hidden', 'false');
+			document.body.classList.add('modal-open');
+		}
+	}
+
+	function closeCaseStudy() {
+		if (caseStudyModal) {
+			caseStudyModal.classList.remove('active');
+			caseStudyModal.setAttribute('aria-hidden', 'true');
+			document.body.classList.remove('modal-open');
+		}
+	}
+
+	caseStudyTriggers.forEach(btn => {
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			openCaseStudy();
+		});
+	});
+
+	if (closeCaseStudyBtn) {
+		closeCaseStudyBtn.addEventListener('click', closeCaseStudy);
+	}
+
+	if (caseStudyModal) {
+		caseStudyModal.addEventListener('click', (e) => {
+			if (e.target === caseStudyModal) {
+				closeCaseStudy();
+			}
+		});
+	}
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && caseStudyModal && caseStudyModal.classList.contains('active')) {
+			closeCaseStudy();
+		}
+	});
 })();
+

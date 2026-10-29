@@ -124,11 +124,11 @@
         <section class="stats-bar">
             <div class="container stats-grid reveal-element" style="padding: 0 2rem;">
                 <div class="stat-item">
-                    <h3>5+</h3>
+                    <h3>6+</h3>
                     <p>Projects Shipped</p>
                 </div>
                 <div class="stat-item">
-                    <h3>2</h3>
+                    <h3>3</h3>
                     <p>Live Client Sites</p>
                 </div>
                 <div class="stat-item">
@@ -148,7 +148,7 @@
                 <div class="about-text">
                     <h2 class="section-title">About Me</h2>
                     <p>I am a B.Tech (Artificial Intelligence and Data Science) graduate driven by the goal of building production-grade intelligence. I focus heavily on model implementation (PyTorch, TensorFlow), NLP systems, and robust full-stack solutions.</p>
-                    <p>In my freelance client projects, I design high-performance web systems utilizing React, Supabase, and custom integrations, taking applications from initial planning to live global deployments.</p>
+                    <p>In my freelance client projects, I design high-performance web systems utilizing React, Vanilla Web Technologies, Supabase, and Cloudflare Edge deployments, taking applications from initial planning to live global deployments.</p>
                     <ul class="about-list">
                         <li>Domain: AI Models & NLP</li>
                         <li>Full-Stack: React, Node, Supabase</li>
@@ -282,7 +282,30 @@
                 <!-- Category 1: Client Freelancing Projects -->
                 <h3 class="project-category-title"><i class='bx bx-briefcase'></i> Live Client Deployments</h3>
                 <div class="projects-grid" style="margin-bottom: 4rem;">
-                    <!-- Project 1: CESE -->
+                    <!-- Project 1: Anandha Nursery & Primary School -->
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="anandha_school_preview.jpg" alt="Anandha Nursery & Primary School Website Preview">
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="project-tag">Vanilla JS (ES6+)</span>
+                                <span class="project-tag">Modern CSS3</span>
+                                <span class="project-tag">Cloudflare Pages</span>
+                                <span class="project-tag">3D Coverflow</span>
+                                <span class="project-tag">Event Lightbox</span>
+                                <span class="project-tag">Edge Caching</span>
+                            </div>
+                            <h3>Anandha Nursery & Primary School</h3>
+                            <p>A high-performance institutional portal engineered for Anandha Nursery & Primary School in Tamil Nadu. Built entirely with Vanilla web technologies and deployed globally on Cloudflare Pages. Features interactive multi-section classroom switchers, an automated dual-view event media gallery with fullscreen lightboxes, a 3D perspective coverflow carousel, and 1-year immutable edge-caching for sub-second mobile loads.</p>
+                            <div class="project-cta">
+                                <a class="btn client-live" href="https://anandhaschoolmpm.in/" target="_blank" rel="noopener">Visit Live Site <i class='bx bx-link-external' style="margin-left: 5px;"></i></a>
+                                <button class="btn outline case-study-btn" type="button" aria-haspopup="dialog"><i class='bx bx-book-open' style="margin-right: 5px;"></i> Case Study</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: CESE -->
                     <article class="project-card">
                         <div class="project-thumb">
                             <img src="cese_preview.png" alt="CESE Website Preview">
@@ -431,6 +454,177 @@
             </div>
         </section>
     </main>
+
+    <!-- Case Study Modal: Anandha Nursery & Primary School -->
+    <div class="case-study-modal-backdrop" id="caseStudyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="csModalTitle">
+        <div class="case-study-modal-container">
+            <button class="case-study-close" id="closeCaseStudy" aria-label="Close Case Study Modal">
+                <i class='bx bx-x'></i>
+            </button>
+
+            <div class="case-study-header">
+                <div class="case-study-pill-row">
+                    <span class="cs-badge cs-badge-primary"><i class='bx bx-briefcase'></i> Client Project</span>
+                    <span class="cs-badge">Education & Institutional</span>
+                    <span class="cs-badge">Melpattampakkam, Tamil Nadu</span>
+                </div>
+                <h2 class="case-study-title" id="csModalTitle">Anandha Nursery & Primary School</h2>
+                <p class="case-study-subtitle">Institutional Web Portal & High-Fidelity Digital Experience</p>
+                <div class="case-study-meta-bar">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-val">Lead Frontend Developer & UI Designer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Live Domain</span>
+                        <a href="https://anandhaschoolmpm.in/" target="_blank" rel="noopener" class="meta-link">anandhaschoolmpm.in <i class='bx bx-link-external'></i></a>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Hosting & Delivery</span>
+                        <span class="meta-val">Cloudflare Pages & Workers</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study-body">
+                <!-- Project Visual Showcase Banner -->
+                <div class="case-study-hero-img">
+                    <img src="anandha_school_preview.jpg" alt="Anandha Nursery & Primary School Campus & Portal Preview">
+                    <div class="hero-img-caption">
+                        <span><i class='bx bx-check-shield'></i> Production Deployment</span>
+                        <span>Zero Framework Overhead • Sub-second Mobile FCP</span>
+                    </div>
+                </div>
+
+                <!-- Section: Overview -->
+                <div class="cs-section">
+                    <h3 class="cs-heading"><i class='bx bx-info-circle'></i> Overview</h3>
+                    <p class="cs-text">
+                        Anandha Nursery and Primary School (Melpattampakkam, Cuddalore District, Tamil Nadu) is a foundational educational institution offering classes from Pre-KG through Grade 7. The administration required a modern digital presence to revitalize community outreach, streamline parent admission inquiries, showcase campus infrastructure, and present student activities and annual events in high visual fidelity.
+                    </p>
+                </div>
+
+                <!-- Section: Challenge & Solution -->
+                <div class="cs-grid-two">
+                    <div class="cs-card challenge-card">
+                        <h4 class="cs-card-title"><i class='bx bx-error-circle'></i> The Challenges</h4>
+                        <ul class="cs-bullet-list">
+                            <li><strong>Diverse Audience & Mobile Preponderance:</strong> Prospective parents browse predominantly using entry-to-mid tier smartphones over varying cellular connections.</li>
+                            <li><strong>Rich Visual Showcase Without CMS Bloat:</strong> Displaying dozens of multi-section classroom photos and multi-image celebrations (Expos, PTA meetings, Independence Day, Yellow Day) without heavy CMS databases or slow third-party plugins.</li>
+                            <li><strong>Parent Trust & Institutional Identity:</strong> Establishing credibility and warm accessibility through crisp typography, school leadership representation, and instant contact channels (click-to-call, email, location directions).</li>
+                        </ul>
+                    </div>
+
+                    <div class="cs-card solution-card">
+                        <h4 class="cs-card-title"><i class='bx bx-check-double'></i> The Solution</h4>
+                        <p class="cs-text" style="margin-bottom: 0.75rem;">
+                            Engineered a lightweight, zero-dependency static web application delivered globally via <strong>Cloudflare’s Edge Network</strong>.
+                        </p>
+                        <ul class="cs-bullet-list">
+                            <li><strong>Liquid Glass Floating Capsule Interface:</strong> Apple iOS-inspired floating capsule navigation with custom CSS variables design system.</li>
+                            <li><strong>Vanilla ES6+ Modular Controllers:</strong> Zero external framework overhead for instantaneous DOM updates, touch events, and keyboard navigation.</li>
+                            <li><strong>Edge Caching Architecture:</strong> 1-year immutable caching for static assets, eliminating server latency.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section: Key Features Implemented -->
+                <div class="cs-section">
+                    <h3 class="cs-heading"><i class='bx bx-rocket'></i> Key Features Implemented</h3>
+                    <div class="cs-features-grid">
+                        <div class="cs-feature-item">
+                            <div class="feat-icon"><i class='bx bx-slideshow'></i></div>
+                            <div class="feat-body">
+                                <h4>Architectural Hero Showcase & Cinematic Carousel</h4>
+                                <p>Preloaded critical infrastructure photography with instant cross-fade transitions and focal-point calibrated framing to prevent navigation bars from obscuring school signage, paired with direct-conversion CTA buttons driving parent admission inquiries.</p>
+                            </div>
+                        </div>
+
+                        <div class="cs-feature-item">
+                            <div class="feat-icon"><i class='bx bx-grid-alt'></i></div>
+                            <div class="feat-body">
+                                <h4>Interactive Classroom Showcase & Multi-Section Switchers</h4>
+                                <p>Structured academic pathways mapping Pre-KG to Grade 7 with custom tab switchers for grades with multiple classrooms (e.g., Grade 1 Sec A / Sec B, Grade 2 Sec A / Sec B, Grade 5 Sec A / Sec B) and inspection modals with photo zooms.</p>
+                            </div>
+                        </div>
+
+                        <div class="cs-feature-item">
+                            <div class="feat-icon"><i class='bx bx-images'></i></div>
+                            <div class="feat-body">
+                                <h4>Dual-View Event Media Gallery & Fullscreen Lightbox</h4>
+                                <p>Automated crossfading cover carousel (View A) and interactive deep-dive photo stage (View B) featuring timed slideshow loop controllers, filmstrip thumbnail navigation, direct image counters, dynamic captions, and keyboard-accessible fullscreen lightboxes (Esc / Arrow keys).</p>
+                            </div>
+                        </div>
+
+                        <div class="cs-feature-item">
+                            <div class="feat-icon"><i class='bx bx-cube'></i></div>
+                            <div class="feat-body">
+                                <h4>3D Perspective Coverflow Carousel & Leadership Showcase</h4>
+                                <p>Smooth hardware-accelerated CSS perspective transforms (<code>preserve-3d</code>, coverflow angles, scale, and hover pauses) showcasing campus grounds, alongside a faculty showcase highlighting correspondents, PTA executives, and teachers.</p>
+                            </div>
+                        </div>
+
+                        <div class="cs-feature-item">
+                            <div class="feat-icon"><i class='bx bx-mobile-alt'></i></div>
+                            <div class="feat-body">
+                                <h4>Mobile-First Navigation & One-Tap Direct Parent Communication</h4>
+                                <p>Floating glassmorphic header reacting dynamically to scroll state, touch-friendly slide-out mobile drawer with background lock, one-tap direct dial (<code>tel:8489588489</code>), official Gmail integration, and local Barakath Nagar schema.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Technical Highlights & Architecture -->
+                <div class="cs-section">
+                    <h3 class="cs-heading"><i class='bx bx-code-alt'></i> Technical Highlights & Performance Engineering</h3>
+                    <div class="cs-table-wrapper">
+                        <table class="cs-tech-table">
+                            <thead>
+                                <tr>
+                                    <th>Layer</th>
+                                    <th>Technology & Engineering Implementation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="layer-tag">Frontend Core</span></td>
+                                    <td>Semantic HTML5 & Modern Vanilla ES6+ JavaScript (zero external framework runtime overhead)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="layer-tag">Styling & UI</span></td>
+                                    <td>Pure CSS3 using Custom Design Tokens (Royal Blue, Amber Gold, Sky Glow, Navy Slate), glassmorphism, fluid typography clamp(), and 3D transforms</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="layer-tag">Deployment & Hosting</span></td>
+                                    <td>Cloudflare Pages / Workers (wrangler.json) for worldwide CDN edge delivery</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="layer-tag">Caching Strategy</span></td>
+                                    <td>Custom <code>_headers</code> configuration providing 1-year immutable caching (<code>max-age=31536000, immutable</code>) for image assets, and stale-while-revalidate for stylesheets/scripts</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="layer-tag">SEO & Indexing</span></td>
+                                    <td>Fully configured <code>sitemap.xml</code>, <code>robots.txt</code>, OpenGraph descriptions, semantic heading hierarchies, and accessible ARIA labels</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="layer-tag">Performance</span></td>
+                                    <td>Sub-second First Contentful Paint (FCP) and smooth 60fps animations across mobile and desktop devices</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Case Study Footer CTA -->
+                <div class="cs-footer-action">
+                    <a href="https://anandhaschoolmpm.in/" target="_blank" rel="noopener" class="btn primary cs-live-btn">
+                        <span>Visit Live Institutional Portal</span>
+                        <i class='bx bx-link-external'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container footer-grid">
